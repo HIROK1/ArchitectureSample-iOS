@@ -142,6 +142,9 @@
 		6425173024DAFF980096C173 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				648779A124E7CB5400443FF6 /* Repository */,
+				648779A024E7CB4700443FF6 /* DataStore */,
+				6487799F24E7CB3E00443FF6 /* Entity */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -237,6 +240,27 @@
 				6487799D24E6C80300443FF6 /* GitHubRepositoryDetailsViewController.swift */,
 			);
 			path = RepositoryDetail;
+			sourceTree = "<group>";
+		};
+		6487799F24E7CB3E00443FF6 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		648779A024E7CB4700443FF6 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		648779A124E7CB5400443FF6 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
