@@ -13,6 +13,7 @@
 		6425171824DAF51B0096C173 /* ArchitectureSample_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425171724DAF51B0096C173 /* ArchitectureSample_iOSTests.swift */; };
 		6425172324DAF51B0096C173 /* ArchitectureSample_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425172224DAF51B0096C173 /* ArchitectureSample_iOSUITests.swift */; };
 		6425173424DB002F0096C173 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425173324DB002F0096C173 /* APIClient.swift */; };
+		64563B6824EEAFD0005EEF3A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64563B6724EEAFD0005EEF3A /* Logger.swift */; };
 		6464E53F25012D6600C765DC /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6464E53E25012D6600C765DC /* Translator.swift */; };
 		6464E54125012DBD00C765DC /* GitHubRepositoryTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6464E54025012DBD00C765DC /* GitHubRepositoryTranslator.swift */; };
 		64821DC324E428DE0035247C /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64821DC224E428DE0035247C /* UI.swift */; };
@@ -57,6 +58,7 @@
 		6425172224DAF51B0096C173 /* ArchitectureSample_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectureSample_iOSUITests.swift; sourceTree = "<group>"; };
 		6425172424DAF51B0096C173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6425173324DB002F0096C173 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		64563B6724EEAFD0005EEF3A /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		6464E53E25012D6600C765DC /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
 		6464E54025012DBD00C765DC /* GitHubRepositoryTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryTranslator.swift; sourceTree = "<group>"; };
 		64821DC224E428DE0035247C /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				6425173324DB002F0096C173 /* APIClient.swift */,
+				64563B6724EEAFD0005EEF3A /* Logger.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				64821DCF24E539520035247C /* GitHubSearchRepositoryPresenter.swift in Sources */,
 				648779A724E7CBD200443FF6 /* GitHubSearchRepositoryListEntity.swift in Sources */,
 				64821DC324E428DE0035247C /* UI.swift in Sources */,
+				64563B6824EEAFD0005EEF3A /* Logger.swift in Sources */,
 				64821DCB24E42A4B0035247C /* GitHubSearchRepositoryUI.swift in Sources */,
 				64B181EF24E53C2C00530280 /* GitHubSearchRepositoryPresenterImpl.swift in Sources */,
 				648779A524E7CBBF00443FF6 /* GitHubSearchRepositoryListDataStore.swift in Sources */,
