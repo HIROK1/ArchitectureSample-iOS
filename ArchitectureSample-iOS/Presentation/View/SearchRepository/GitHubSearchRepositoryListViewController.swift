@@ -10,6 +10,8 @@ import UIKit
 
 class GitHubSearchRepositoryListViewController: UIViewController, GitHubSearchRepositoryPresenterView {
     
+    private var repositories: [GitHubRepositoryModel] = []
+    
     private var ui: GitHubSearchRepositoryUI? {
         didSet {
             ui?.repositorySearchBar.delegate = self
@@ -33,15 +35,19 @@ class GitHubSearchRepositoryListViewController: UIViewController, GitHubSearchRe
 }
 
 extension GitHubSearchRepositoryListViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return repositories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: GitHubSearchRepositoryListTableViewCell.this, for: indexPath) as? GitHubSearchRepositoryListTableViewCell else {
+            return UITableViewCell()
+        }
+        let repository = repositories[indexPath.row]
+        cell.configure(repository: repository)
+        return cell
     }
-    
-    
 }
 
 extension GitHubSearchRepositoryListViewController: UISearchBarDelegate {

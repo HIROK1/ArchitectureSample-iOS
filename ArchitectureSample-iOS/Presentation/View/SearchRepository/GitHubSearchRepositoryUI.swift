@@ -33,6 +33,7 @@ final class GitHubSearchRepositoryUIImpl: GitHubSearchRepositoryUI {
         tableView.separatorStyle = .singleLine
         tableView.separatorColor = .lightGray
         tableView.tableHeaderView = repositorySearchBar
+        tableView.register(GitHubSearchRepositoryListTableViewCell.self, forCellReuseIdentifier: GitHubSearchRepositoryListTableViewCell.this)
         return tableView
     }()
 }
