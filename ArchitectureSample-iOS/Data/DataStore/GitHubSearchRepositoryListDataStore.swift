@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+protocol GitHubSearchRepositoryListDataStore {
+    func searchRepository(text: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void)
+}
+
+struct GitHubSearchRepositoryListDataStoreImpl: GitHubSearchRepositoryListDataStore {
+    
+    func searchRepository(text: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        APIClient().send(GitHubRequest(query: text)) { data, response, error in
+            completion(data, response, error)
+        }
+    }
+}
