@@ -7,3 +7,27 @@
 //
 
 import Foundation
+
+protocol GitHubSearchRepositoryListRepository: AnyObject {
+    func searchRepository(text: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void)
+}
+
+protocol GitHubSearchRepositoryListRepositoryOutput: AnyObject {
+    func updateRepositorys()
+    func transitionToRepositoryDetails()
+}
+
+final class GitHubSearchRepositoryListRepositoryImpl: GitHubSearchRepositoryListRepository {
+
+    private let dataStore: GitHubSearchRepositoryListDataStore
+    
+    init(dataStore: GitHubSearchRepositoryListDataStore) {
+        self.dataStore = dataStore
+    }
+    
+    func searchRepository(text: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        dataStore.searchRepository(text: text) { data, response, error in
+            completion(data, response, error)
+        }
+    }
+}
