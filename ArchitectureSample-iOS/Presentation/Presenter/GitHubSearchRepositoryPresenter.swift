@@ -8,10 +8,12 @@
 
 import Foundation
 
-protocol GitHubSearchRepositoryPresenter {
-    var view: GitHubSearchRepositoryPresenterView! { get set }
+protocol GitHubSearchRepositoryPresenter: AnyObject {
+    func didSelectRow(at indexPath: IndexPath)
+    func didTapSearchButton(text: String?)
 }
 
 protocol GitHubSearchRepositoryPresenterView: AnyObject {
-    func inject(ui: GitHubSearchRepositoryUI, presenter: GitHubSearchRepositoryPresenter)
+    func updateRepositories(model: [GitHubRepositoryModel])
+    func transitionToRepositoryDetails()
 }

@@ -207,6 +207,8 @@
 		64821DC524E429320035247C /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				64821DCE24E539520035247C /* GitHubSearchRepositoryPresenter.swift */,
+				64B181EE24E53C2C00530280 /* GitHubSearchRepositoryPresenterImpl.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -216,8 +218,6 @@
 			children = (
 				64821DC724E4299B0035247C /* GitHubSearchRepositoryListViewController.swift */,
 				64821DCA24E42A4B0035247C /* GitHubSearchRepositoryUI.swift */,
-				64821DCE24E539520035247C /* GitHubSearchRepositoryPresenter.swift */,
-				64B181EE24E53C2C00530280 /* GitHubSearchRepositoryPresenterImpl.swift */,
 			);
 			path = SearchRepository;
 			sourceTree = "<group>";
