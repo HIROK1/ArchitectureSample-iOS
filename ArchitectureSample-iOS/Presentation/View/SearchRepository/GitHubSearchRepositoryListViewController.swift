@@ -63,8 +63,10 @@ extension GitHubSearchRepositoryListViewController: UITableViewDelegate {
 }
 
 extension GitHubSearchRepositoryListViewController {
-    func updateRepositorys() {
-        print("didTapSearchButton")
+    
+    func updateRepositories(model: [GitHubRepositoryModel]) {
+        self.repositories = model
+        self.ui?.repositoryTableView.reloadData()
     }
     
     func transitionToRepositoryDetails() {
