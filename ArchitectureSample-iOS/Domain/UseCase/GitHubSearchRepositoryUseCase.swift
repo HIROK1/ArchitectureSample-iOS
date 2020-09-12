@@ -8,23 +8,39 @@
 
 import Foundation
 
-protocol SearchRepositoryUseCase {
-    func searchRepositories()
-    func transitionToRepositoryDetails()
+protocol GitHubSearchRepositoryUseCase: AnyObject {
+    func searchRepository(text: String, completion: @escaping (Result<[GitHubRepositoryModel], Error>) -> Void)
 }
 
-protocol SearchRepositoryUseCaseOutput {
-    <#requirements#>
-}
-
-final class SearchRepositoryUseCaseImpl: SearchRepositoryUseCase {
-    weak var presenter: GitHubSearchRepositoryPresenterView?
+final class GitHubSearchRepositoryUseCaseImpl: GitHubSearchRepositoryUseCase {
     
-    func searchRepositories() {
-        presenter?.updateRepositorys()
+    private let repository: GitHubSearchRepositoryListRepository
+    
+    init(repository: GitHubSearchRepositoryListRepository) {
+        self.repository = repository
     }
     
-    func transitionToRepositoryDetails() {
-        presenter?.transitionToRepositoryDetails()
+    func searchRepository(text: String, completion: @escaping (Result<[GitHubRepositoryModel], Error>) -> Void) {
+        repository.searchRepository(text: text) { data, response, error in
+        
+            guard let _data = data else { return completion(.failure(error!))}
+            
+            if let response = response as? HTTPURLResponse {
+                Logger.apiResponseLogger(response, String(bytes: _data, encoding: .utf8) ?? "")
+            }
+            
+            let decoder = JSONDecoder()
+            
+            do {
+                let githubResponse = try decoder.decode(GitHubSearchRepositoryListEntity.self, from: _data)
+                
+                let repositories = GitHubRepositoriesTranslator.translate(githubResponse)
+                print(repositories)
+                completion(.success(repositories.repositories))
+            } catch {
+                print(error)
+                completion(.failure(error))
+            }
+        }
     }
 }
