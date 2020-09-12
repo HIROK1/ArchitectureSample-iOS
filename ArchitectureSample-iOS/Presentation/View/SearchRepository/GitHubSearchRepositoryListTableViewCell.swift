@@ -12,10 +12,46 @@ final class GitHubSearchRepositoryListTableViewCell: UITableViewCell {
     
     static let this = "GitHubSearchRepositoryListTableViewCell"
     
+    private(set) lazy var allComponentstackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 20
+        stackView.alignment = .center
+        stackView.distribution = .equalSpacing
+        stackView.addArrangedSubview(avatarImgImageView)
+        stackView.addArrangedSubview(verticalStackView)
+        return stackView
+    }()
+
+    private(set) lazy var verticalStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        stackView.alignment = .leading
+        stackView.distribution = .equalSpacing
+        stackView.addArrangedSubview(repositoryFullName)
+        stackView.addArrangedSubview(horizontalStackView)
+        return stackView
+    }()
+    
+    private(set) lazy var horizontalStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 20
+        stackView.alignment = .center
+        stackView.distribution = .equalSpacing
+        stackView.addArrangedSubview(languageLabel)
+        stackView.addArrangedSubview(stargazersCountLabel)
+        return stackView
+    }()
+    
     private(set) lazy var avatarImgImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = imageView.frame.width * 0.5
+        imageView.layer.cornerRadius = 20
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         return imageView
     }()
     
@@ -41,18 +77,11 @@ final class GitHubSearchRepositoryListTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.backgroundColor = .white
-//        
-//        addSubview(avatarImgImageView)
-//        avatarImgImageView.translatesAutoresizingMaskIntoConstraints = false
-//        avatarImgImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-//        avatarImgImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
-//        avatarImgImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
-//        avatarImgImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        addSubview(repositoryFullName)
-        repositoryFullName.translatesAutoresizingMaskIntoConstraints = false
-        repositoryFullName.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        repositoryFullName.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+  
+        addSubview(allComponentstackView)
+        allComponentstackView.translatesAutoresizingMaskIntoConstraints = false
+        allComponentstackView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor).isActive = true
+        allComponentstackView.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 20).isActive = true
     }
     
     required init?(coder: NSCoder) {
@@ -71,6 +100,9 @@ final class GitHubSearchRepositoryListTableViewCell: UITableViewCell {
     }
     
     func configure(repository: GitHubRepositoryModel) {
+        avatarImgImageView.setImage(with: URL(string: repository.avatarUrl.avatarUrl))
         repositoryFullName.text = repository.fullName
+        languageLabel.text = repository.language
+        stargazersCountLabel.text = String("⭐️\(repository.stargazersCount)")
     }
 }
