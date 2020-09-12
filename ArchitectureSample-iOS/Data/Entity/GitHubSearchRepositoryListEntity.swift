@@ -28,7 +28,7 @@ struct Item: Codable {
     let owner: Owner
     let `private`: Bool
     let htmlUrl: String
-    let description: String
+    let description: String?
     let fork: Bool
     let url: String
     let createdAt: String
