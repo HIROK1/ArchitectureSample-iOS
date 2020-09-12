@@ -28,6 +28,8 @@
 		648779A724E7CBD200443FF6 /* GitHubSearchRepositoryListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648779A624E7CBD200443FF6 /* GitHubSearchRepositoryListEntity.swift */; };
 		64B181EF24E53C2C00530280 /* GitHubSearchRepositoryPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B181EE24E53C2C00530280 /* GitHubSearchRepositoryPresenterImpl.swift */; };
 		64B7E118250B9DBD002C1A47 /* SearchRepositoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B7E117250B9DBD002C1A47 /* SearchRepositoryRequest.swift */; };
+		64B7E11B250BA876002C1A47 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B7E11A250BA876002C1A47 /* Nuke.framework */; };
+		64B7E11C250BA876002C1A47 /* Nuke.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64B7E11A250BA876002C1A47 /* Nuke.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		64F9165724F75C1A00520D24 /* ViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9165624F75C1A00520D24 /* ViewControllerBuilder.swift */; };
 		64F9165924F75C8000520D24 /* GitHubSearchRepositoryListViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9165824F75C8000520D24 /* GitHubSearchRepositoryListViewControllerBuilder.swift */; };
 		64FAEDAB2505C58300F62F33 /* GitHubSearchRepositoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FAEDAA2505C58300F62F33 /* GitHubSearchRepositoryListTableViewCell.swift */; };
@@ -49,6 +51,20 @@
 			remoteInfo = "ArchitectureSample-iOS";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		64B7E11D250BA876002C1A47 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				64B7E11C250BA876002C1A47 /* Nuke.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		642516FD24DAF51A0096C173 /* ArchitectureSample-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ArchitectureSample-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +94,7 @@
 		648779A624E7CBD200443FF6 /* GitHubSearchRepositoryListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchRepositoryListEntity.swift; sourceTree = "<group>"; };
 		64B181EE24E53C2C00530280 /* GitHubSearchRepositoryPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchRepositoryPresenterImpl.swift; sourceTree = "<group>"; };
 		64B7E117250B9DBD002C1A47 /* SearchRepositoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryRequest.swift; sourceTree = "<group>"; };
+		64B7E11A250BA876002C1A47 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
 		64F9165624F75C1A00520D24 /* ViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBuilder.swift; sourceTree = "<group>"; };
 		64F9165824F75C8000520D24 /* GitHubSearchRepositoryListViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchRepositoryListViewControllerBuilder.swift; sourceTree = "<group>"; };
 		64FAEDAA2505C58300F62F33 /* GitHubSearchRepositoryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchRepositoryListTableViewCell.swift; sourceTree = "<group>"; };
@@ -88,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64B7E11B250BA876002C1A47 /* Nuke.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +133,7 @@
 				6425171624DAF51B0096C173 /* ArchitectureSample-iOSTests */,
 				6425172124DAF51B0096C173 /* ArchitectureSample-iOSUITests */,
 				642516FE24DAF51A0096C173 /* Products */,
+				64B7E119250BA876002C1A47 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -295,6 +314,22 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		64B7E119250BA876002C1A47 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64B7E11A250BA876002C1A47 /* Nuke.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		64B7E120250BAAB3002C1A47 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				64B7E121250BAAD8002C1A47 /* UIImageView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		64F9165524F75BF300520D24 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +349,8 @@
 				642516F924DAF51A0096C173 /* Sources */,
 				642516FA24DAF51A0096C173 /* Frameworks */,
 				642516FB24DAF51A0096C173 /* Resources */,
+				64B7E11D250BA876002C1A47 /* Embed Frameworks */,
+				64B7E11E250BA88B002C1A47 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -428,6 +465,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		64B7E11E250BA88B002C1A47 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		642516F924DAF51A0096C173 /* Sources */ = {
@@ -620,6 +679,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S3HHDVY962;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "ArchitectureSample-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -638,6 +701,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S3HHDVY962;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "ArchitectureSample-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
