@@ -6,18 +6,24 @@
 //  Copyright © 2020 Hiroki. All rights reserved.
 //
 
+import Foundation
+
 struct GitHubRequest: Request {
     
-    var query: String
+    let value: String
     
-    var baseURL: String {
-        return "https://api.github.com"
+    var baseURL: URLComponents? {
+        return URLComponents(string: "https://api.github.com")
     }
     
     var path: String {
         return "/search/repositories"
     }
     
+    var queryItems: [URLQueryItem] {
+        return [URLQueryItem(name: "q", value: value)]
+    }
+       
     var method: HttpMethod {
         return .get
     }
@@ -27,7 +33,7 @@ struct GitHubRequest: Request {
     }
     
     var requestBody: [String: Any?] {
-        return ["q": query]
+        return [:]
     }
 }
 
