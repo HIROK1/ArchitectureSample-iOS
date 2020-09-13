@@ -29,7 +29,7 @@ final class GitHubSearchRepositoryListTableViewCell: UITableViewCell {
         stackView.spacing = 8
         stackView.alignment = .leading
         stackView.distribution = .equalSpacing
-        stackView.addArrangedSubview(repositoryFullName)
+        stackView.addArrangedSubview(repositoryFullNameLabel)
         stackView.addArrangedSubview(horizontalStackView)
         return stackView
     }()
@@ -48,14 +48,14 @@ final class GitHubSearchRepositoryListTableViewCell: UITableViewCell {
     private(set) lazy var avatarImgImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 20
+        imageView.layer.cornerRadius = 30
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         return imageView
     }()
     
-    private(set) lazy var repositoryFullName: UILabel = {
+    private(set) lazy var repositoryFullNameLabel: UILabel = {
         let label = UILabel()
         label.sizeToFit()
         return label
@@ -101,7 +101,7 @@ final class GitHubSearchRepositoryListTableViewCell: UITableViewCell {
     
     func configure(repository: GitHubRepositoryModel) {
         avatarImgImageView.setImage(with: URL(string: repository.avatarUrl.avatarUrl))
-        repositoryFullName.text = repository.fullName
+        repositoryFullNameLabel.text = repository.fullName
         languageLabel.text = repository.language
         stargazersCountLabel.text = String("⭐️\(repository.stargazersCount)")
     }
