@@ -15,7 +15,7 @@ protocol GitHubSearchRepositoryListDataStore {
 struct GitHubSearchRepositoryListDataStoreImpl: GitHubSearchRepositoryListDataStore {
     
     func searchRepository(text: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        APIClient().send(GitHubRequest(query: text)) { data, response, error in
+        APIClient().send(GitHubRequest(value: text)) { data, response, error in
             completion(data, response, error)
         }
     }
