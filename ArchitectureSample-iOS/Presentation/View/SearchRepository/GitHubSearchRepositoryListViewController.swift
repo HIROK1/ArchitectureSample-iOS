@@ -69,8 +69,9 @@ extension GitHubSearchRepositoryListViewController {
         self.ui?.repositoryTableView.reloadData()
     }
     
-    func transitionToRepositoryDetails() {
+    func transitionToRepositoryDetails(indexPath: IndexPath) {
         let vc = GitHubRepositoryDetailsViewController()
+        vc.configure(text: repositories[indexPath.row].fullName)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

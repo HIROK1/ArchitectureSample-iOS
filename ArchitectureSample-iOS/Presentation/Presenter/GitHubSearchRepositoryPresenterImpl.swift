@@ -34,6 +34,6 @@ final class GitHubSearchRepositoryPresenterImpl: GitHubSearchRepositoryPresenter
     }
     
     func didSelectRow(at indexPath: IndexPath) {
-        self.view?.transitionToRepositoryDetails()
+        self.view?.transitionToRepositoryDetails(indexPath: indexPath)
     }
 }
