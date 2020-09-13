@@ -14,20 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
-        let vc = GitHubSearchRepositoryListViewController()
-        let ui = GitHubSearchRepositoryUIImpl()
-        ui.viewController = vc
-        let presenter = GitHubSearchRepositoryPresenterImpl()
-        vc.inject(ui: ui, presenter: presenter)
+        let vc = GitHubSearchRepositoryListViewControllerBuilder.build()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UINavigationController(rootViewController: vc)
         window?.makeKeyAndVisible()
-        
-        
+
         return true
     }
 }
-

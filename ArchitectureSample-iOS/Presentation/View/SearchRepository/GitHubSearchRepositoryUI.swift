@@ -28,11 +28,12 @@ final class GitHubSearchRepositoryUIImpl: GitHubSearchRepositoryUI {
     
     private(set) lazy var repositoryTableView: UITableView = {
         let tableView = UITableView()
-        tableView.rowHeight = 60
+        tableView.rowHeight = 80
         tableView.backgroundColor = .white
         tableView.separatorStyle = .singleLine
         tableView.separatorColor = .lightGray
         tableView.tableHeaderView = repositorySearchBar
+        tableView.register(GitHubSearchRepositoryListTableViewCell.self, forCellReuseIdentifier: GitHubSearchRepositoryListTableViewCell.this)
         return tableView
     }()
 }
