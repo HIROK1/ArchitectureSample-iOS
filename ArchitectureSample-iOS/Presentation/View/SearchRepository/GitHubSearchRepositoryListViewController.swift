@@ -52,7 +52,7 @@ extension GitHubSearchRepositoryListViewController: UITableViewDataSource {
 
 extension GitHubSearchRepositoryListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        presenter?.didTapSearchButton(text: searchBar.text)
+        presenter?.didTapSearchButton(text: searchBar.text ?? "")
     }
 }
 

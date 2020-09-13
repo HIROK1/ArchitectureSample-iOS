@@ -19,8 +19,8 @@ final class GitHubSearchRepositoryPresenterImpl: GitHubSearchRepositoryPresenter
         self.useCase = useCase
     }
     
-    func didTapSearchButton(text: String?) {
-        useCase.searchRepository(text: text!) { result in
+    func didTapSearchButton(text: String) {
+        useCase.searchRepository(text: text) { result in
             switch result {
             case .success(let model):
                 DispatchQueue.main.sync {

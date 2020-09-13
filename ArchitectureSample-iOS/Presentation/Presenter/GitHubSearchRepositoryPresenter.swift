@@ -10,7 +10,7 @@ import Foundation
 
 protocol GitHubSearchRepositoryPresenter: AnyObject {
     func didSelectRow(at indexPath: IndexPath)
-    func didTapSearchButton(text: String?)
+    func didTapSearchButton(text: String)
 }
 
 protocol GitHubSearchRepositoryPresenterView: AnyObject {
