@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GitHubSearchRepositoryListViewController: UIViewController, GitHubSearchRepositoryPresenterView {
+class GitHubSearchRepositoryListViewController: UIViewController {
     
     private var repositories: [GitHubRepositoryModel] = []
     
@@ -50,19 +50,22 @@ extension GitHubSearchRepositoryListViewController: UITableViewDataSource {
     }
 }
 
+// MARK - UISearchBarDelegate
 extension GitHubSearchRepositoryListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         presenter?.didTapSearchButton(text: searchBar.text ?? "")
     }
 }
 
+// MARK - UITableViewDelegate
 extension GitHubSearchRepositoryListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.didSelectRow(at: indexPath)
     }
 }
 
-extension GitHubSearchRepositoryListViewController {
+// MARK - GitHubSearchRepositoryPresenterView
+extension GitHubSearchRepositoryListViewController: GitHubSearchRepositoryPresenterView {
     
     func updateRepositories(model: [GitHubRepositoryModel]) {
         self.repositories = model
