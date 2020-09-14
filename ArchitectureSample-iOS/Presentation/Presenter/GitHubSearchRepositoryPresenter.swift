@@ -16,4 +16,6 @@ protocol GitHubSearchRepositoryPresenter: AnyObject {
 protocol GitHubSearchRepositoryPresenterView: AnyObject {
     func updateRepositories(model: [GitHubRepositoryModel])
     func transitionToRepositoryDetails(indexPath: IndexPath)
+    func showActivityIndicator()
+    func stopActivityIndicator()
 }

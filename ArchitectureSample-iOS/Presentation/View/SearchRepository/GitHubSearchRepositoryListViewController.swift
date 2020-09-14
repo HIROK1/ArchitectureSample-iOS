@@ -53,6 +53,7 @@ extension GitHubSearchRepositoryListViewController: UITableViewDataSource {
 // MARK - UISearchBarDelegate
 extension GitHubSearchRepositoryListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        showActivityIndicator()
         presenter?.didTapSearchButton(text: searchBar.text ?? "")
     }
 }
@@ -76,5 +77,13 @@ extension GitHubSearchRepositoryListViewController: GitHubSearchRepositoryPresen
         let vc = GitHubRepositoryDetailsViewController()
         vc.configure(text: repositories[indexPath.row].fullName)
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func showActivityIndicator() {
+        self.ui?.grayOutActivityIndicatorView.showActivityIndicator()
+    }
+    
+    func stopActivityIndicator() {
+        self.ui?.grayOutActivityIndicatorView.stopActivityIndicator()
     }
 }
