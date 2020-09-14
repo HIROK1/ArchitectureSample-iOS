@@ -31,6 +31,7 @@
 		64B7E11B250BA876002C1A47 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B7E11A250BA876002C1A47 /* Nuke.framework */; };
 		64B7E11C250BA876002C1A47 /* Nuke.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64B7E11A250BA876002C1A47 /* Nuke.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		64B7E122250BAAD8002C1A47 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B7E121250BAAD8002C1A47 /* UIImageView+Extension.swift */; };
+		64B7E126250F7370002C1A47 /* GrayOutActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B7E125250F7370002C1A47 /* GrayOutActivityIndicatorView.swift */; };
 		64F9165724F75C1A00520D24 /* ViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9165624F75C1A00520D24 /* ViewControllerBuilder.swift */; };
 		64F9165924F75C8000520D24 /* GitHubSearchRepositoryListViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9165824F75C8000520D24 /* GitHubSearchRepositoryListViewControllerBuilder.swift */; };
 		64FAEDAB2505C58300F62F33 /* GitHubSearchRepositoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FAEDAA2505C58300F62F33 /* GitHubSearchRepositoryListTableViewCell.swift */; };
@@ -97,6 +98,7 @@
 		64B7E117250B9DBD002C1A47 /* SearchRepositoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryRequest.swift; sourceTree = "<group>"; };
 		64B7E11A250BA876002C1A47 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
 		64B7E121250BAAD8002C1A47 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		64B7E125250F7370002C1A47 /* GrayOutActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayOutActivityIndicatorView.swift; sourceTree = "<group>"; };
 		64F9165624F75C1A00520D24 /* ViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBuilder.swift; sourceTree = "<group>"; };
 		64F9165824F75C8000520D24 /* GitHubSearchRepositoryListViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchRepositoryListViewControllerBuilder.swift; sourceTree = "<group>"; };
 		64FAEDAA2505C58300F62F33 /* GitHubSearchRepositoryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchRepositoryListTableViewCell.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			children = (
 				6487799C24E6C73F00443FF6 /* RepositoryDetail */,
 				64821DC924E42A190035247C /* SearchRepository */,
+				64B7E125250F7370002C1A47 /* GrayOutActivityIndicatorView.swift */,
 				64821DC224E428DE0035247C /* UI.swift */,
 			);
 			path = View;
@@ -505,6 +508,7 @@
 				6487799B24E6C67500443FF6 /* GitHubSearchRepositoryUseCase.swift in Sources */,
 				6425170124DAF51A0096C173 /* AppDelegate.swift in Sources */,
 				64821DC824E4299B0035247C /* GitHubSearchRepositoryListViewController.swift in Sources */,
+				64B7E126250F7370002C1A47 /* GrayOutActivityIndicatorView.swift in Sources */,
 				64B7E122250BAAD8002C1A47 /* UIImageView+Extension.swift in Sources */,
 				6425173424DB002F0096C173 /* APIClient.swift in Sources */,
 				6487799E24E6C80300443FF6 /* GitHubRepositoryDetailsViewController.swift in Sources */,

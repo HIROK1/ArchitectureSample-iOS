@@ -12,6 +12,7 @@ import UIKit
 protocol GitHubSearchRepositoryUI: UI {
     var repositorySearchBar: UISearchBar { get }
     var repositoryTableView: UITableView { get }
+    var grayOutActivityIndicatorView: GrayOutActivityIndicatorView { get }
     func setup()
 }
 
@@ -36,6 +37,8 @@ final class GitHubSearchRepositoryUIImpl: GitHubSearchRepositoryUI {
         tableView.register(GitHubSearchRepositoryListTableViewCell.self, forCellReuseIdentifier: GitHubSearchRepositoryListTableViewCell.this)
         return tableView
     }()
+    
+    private(set) var grayOutActivityIndicatorView = GrayOutActivityIndicatorView()
 }
 
 extension GitHubSearchRepositoryUIImpl {
@@ -48,5 +51,12 @@ extension GitHubSearchRepositoryUIImpl {
         repositoryTableView.leftAnchor.constraint(equalTo: vc.view.leftAnchor).isActive = true
         repositoryTableView.bottomAnchor.constraint(equalTo: vc.view.bottomAnchor).isActive = true
         repositoryTableView.rightAnchor.constraint(equalTo: vc.view.rightAnchor).isActive = true
+        
+        repositoryTableView.addSubview(grayOutActivityIndicatorView)
+        grayOutActivityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+        grayOutActivityIndicatorView.topAnchor.constraint(equalTo: vc.view.topAnchor).isActive = true
+        grayOutActivityIndicatorView.leftAnchor.constraint(equalTo: vc.view.leftAnchor).isActive = true
+        grayOutActivityIndicatorView.bottomAnchor.constraint(equalTo: vc.view.bottomAnchor).isActive = true
+        grayOutActivityIndicatorView.rightAnchor.constraint(equalTo: vc.view.rightAnchor).isActive = true
     }
 }

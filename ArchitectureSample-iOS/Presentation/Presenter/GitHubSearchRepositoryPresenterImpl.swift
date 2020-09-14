@@ -21,6 +21,10 @@ final class GitHubSearchRepositoryPresenterImpl: GitHubSearchRepositoryPresenter
     
     func didTapSearchButton(text: String) {
         useCase.searchRepository(text: text) { result in
+            DispatchQueue.main.sync {
+                self.view?.stopActivityIndicator()
+            }
+            
             switch result {
             case .success(let model):
                 DispatchQueue.main.sync {
