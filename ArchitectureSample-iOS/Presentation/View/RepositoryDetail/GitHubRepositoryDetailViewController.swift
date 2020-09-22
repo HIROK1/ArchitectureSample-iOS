@@ -42,6 +42,9 @@ extension GitHubRepositoryDetailViewController: GitHubRepositoryDetailPresenterV
     }
     
     func showErrorAlert() {
-        print("showErrorAlert")
+        let alert = UIAlertController.createSimpleMessageAlert(message: "READMEを取得できませんでした。") { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        self.present(alert, animated: true)
     }
 }

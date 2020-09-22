@@ -34,7 +34,11 @@ final class GitHubRepositoryDetailPresenterImpl: GitHubRepositoryDetailPresenter
                 
             case .failure(let error):
                 print(error)
-                self.view?.showErrorAlert()
+                
+                DispatchQueue.main.async {
+                    self.view?.showErrorAlert()
+                }
+                
             }
         }
     }
