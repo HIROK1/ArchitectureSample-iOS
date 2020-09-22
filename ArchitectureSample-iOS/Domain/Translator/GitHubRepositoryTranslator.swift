@@ -26,12 +26,13 @@ final class GitHubRepositoryTranslator: Translator {
     typealias Output = GitHubRepositoryModel
     
     static func translate(_ entity: Item) -> GitHubRepositoryModel {
+        let name = entity.name
         let avatarUrl = GitHubRepositoryOwnerTranslator.translate(entity.owner)
         let fullName = entity.fullName
         let language = entity.language ?? ""
         let stargazersCount = entity.stargazersCount
         
-        return GitHubRepositoryModel(avatarUrl: avatarUrl, fullName: fullName, language: language, stargazersCount: stargazersCount)
+        return GitHubRepositoryModel(name: name, avatarUrl: avatarUrl, fullName: fullName, language: language, stargazersCount: stargazersCount)
     }
 }
 
@@ -40,9 +41,10 @@ final class GitHubRepositoryOwnerTranslator: Translator {
     typealias Output = GitHubRepositoryOwnerModel
     
     static func translate(_ entity: Input) -> Output {
+        let login = entity.login
         let avatarUrl = entity.avatarUrl
         
-        return GitHubRepositoryOwnerModel(avatarUrl: avatarUrl)
+        return GitHubRepositoryOwnerModel(login: login, avatarUrl: avatarUrl)
     }
     
 }
