@@ -14,7 +14,7 @@ struct GitHubRepositoryReadmeEntity: Codable {
     let size: Int?
     let name: String?
     let path: String?
-    let content: String
+    let content: String?
     let sha: String?
     let url: String?
     let gitUrl: String?

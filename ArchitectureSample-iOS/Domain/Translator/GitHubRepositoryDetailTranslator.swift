@@ -13,6 +13,6 @@ final class GitHubRepositoryDetailTranslator: Translator {
     typealias Output = GitHubRepositoryReadmeModel
     
     static func translate(_ entity: Input) -> Output {
-        return GitHubRepositoryReadmeModel(readmeString: entity.content)
+        return GitHubRepositoryReadmeModel(readmeString: entity.content ?? "")
     }
 }
