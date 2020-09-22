@@ -12,11 +12,6 @@ protocol GitHubSearchRepositoryListRepository: AnyObject {
     func searchRepository(text: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void)
 }
 
-protocol GitHubSearchRepositoryListRepositoryOutput: AnyObject {
-    func updateRepositorys()
-    func transitionToRepositoryDetails()
-}
-
 final class GitHubSearchRepositoryListRepositoryImpl: GitHubSearchRepositoryListRepository {
 
     private let dataStore: GitHubSearchRepositoryListDataStore
