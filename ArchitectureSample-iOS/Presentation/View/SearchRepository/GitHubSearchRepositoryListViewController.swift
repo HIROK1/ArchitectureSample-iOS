@@ -74,8 +74,8 @@ extension GitHubSearchRepositoryListViewController: GitHubSearchRepositoryPresen
     }
     
     func transitionToRepositoryDetails(indexPath: IndexPath) {
-        let vc = GitHubRepositoryDetailsViewController()
-        vc.configure(text: repositories[indexPath.row].fullName)
+        let vc = GitHubRepositoryDetailViewControllerBuilder.build()
+        vc.fetchReadme(owner: repositories[indexPath.row].avatarUrl.login, repositoryName: repositories[indexPath.row].name)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
