@@ -214,11 +214,29 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		645174C92517925900CEF140 /* RepositoryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				645174CB2517928E00CEF140 /* GitHubRepositoryDetailPresenter.swift */,
+				645174CD2517929B00CEF140 /* GitHubRepositoryDetailPresenterImpl.swift */,
+			);
+			path = RepositoryDetail;
+			sourceTree = "<group>";
+		};
+		645174CA2517926500CEF140 /* SearchRepository */ = {
+			isa = PBXGroup;
+			children = (
+				64821DCE24E539520035247C /* GitHubSearchRepositoryPresenter.swift */,
+				64B181EE24E53C2C00530280 /* GitHubSearchRepositoryPresenterImpl.swift */,
+			);
+			path = SearchRepository;
+			sourceTree = "<group>";
+		};
 		64821DC124E428A90035247C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				64821DC524E429320035247C /* Presenter */,
 				64821DC424E4292C0035247C /* View */,
+				64821DC524E429320035247C /* Presenter */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -226,8 +244,8 @@
 		64821DC424E4292C0035247C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6487799C24E6C73F00443FF6 /* RepositoryDetail */,
 				64821DC924E42A190035247C /* SearchRepository */,
+				6487799C24E6C73F00443FF6 /* RepositoryDetail */,
 				64B7E125250F7370002C1A47 /* GrayOutActivityIndicatorView.swift */,
 				64821DC224E428DE0035247C /* UI.swift */,
 			);
@@ -237,8 +255,8 @@
 		64821DC524E429320035247C /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				64821DCE24E539520035247C /* GitHubSearchRepositoryPresenter.swift */,
-				64B181EE24E53C2C00530280 /* GitHubSearchRepositoryPresenterImpl.swift */,
+				645174CA2517926500CEF140 /* SearchRepository */,
+				645174C92517925900CEF140 /* RepositoryDetail */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
