@@ -13,6 +13,8 @@
 		6425171824DAF51B0096C173 /* ArchitectureSample_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425171724DAF51B0096C173 /* ArchitectureSample_iOSTests.swift */; };
 		6425172324DAF51B0096C173 /* ArchitectureSample_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425172224DAF51B0096C173 /* ArchitectureSample_iOSUITests.swift */; };
 		6425173424DB002F0096C173 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425173324DB002F0096C173 /* APIClient.swift */; };
+		645174BB2515072C00CEF140 /* Down.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 645174BA2515072C00CEF140 /* Down.framework */; };
+		645174BC2515072C00CEF140 /* Down.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 645174BA2515072C00CEF140 /* Down.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		645174BE251515CD00CEF140 /* GitHubRepositoryReadmeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645174BD251515CD00CEF140 /* GitHubRepositoryReadmeEntity.swift */; };
 		645174C02515188800CEF140 /* GitHubRepositoryDetailDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645174BF2515188800CEF140 /* GitHubRepositoryDetailDataStore.swift */; };
 		645174C2251748CC00CEF140 /* GitHubRepositoryDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645174C1251748CC00CEF140 /* GitHubRepositoryDetailRepository.swift */; };
@@ -72,6 +74,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				645174BC2515072C00CEF140 /* Down.framework in Embed Frameworks */,
 				64B7E11C250BA876002C1A47 /* Nuke.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -92,6 +95,7 @@
 		6425172224DAF51B0096C173 /* ArchitectureSample_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectureSample_iOSUITests.swift; sourceTree = "<group>"; };
 		6425172424DAF51B0096C173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6425173324DB002F0096C173 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		645174BA2515072C00CEF140 /* Down.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Down.framework; path = Carthage/Build/iOS/Down.framework; sourceTree = "<group>"; };
 		645174BD251515CD00CEF140 /* GitHubRepositoryReadmeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryReadmeEntity.swift; sourceTree = "<group>"; };
 		645174BF2515188800CEF140 /* GitHubRepositoryDetailDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryDetailDataStore.swift; sourceTree = "<group>"; };
 		645174C1251748CC00CEF140 /* GitHubRepositoryDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryDetailRepository.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				645174BB2515072C00CEF140 /* Down.framework in Frameworks */,
 				64B7E11B250BA876002C1A47 /* Nuke.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,6 +376,7 @@
 		64B7E119250BA876002C1A47 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				645174BA2515072C00CEF140 /* Down.framework */,
 				64B7E11A250BA876002C1A47 /* Nuke.framework */,
 			);
 			name = Frameworks;
@@ -531,6 +537,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Down.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
