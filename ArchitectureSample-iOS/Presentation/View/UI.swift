@@ -9,6 +9,6 @@
 import Foundation
 import UIKit
 
-protocol UI {
+protocol UI: AnyObject {
     var viewController: UIViewController? { get set }
 }
