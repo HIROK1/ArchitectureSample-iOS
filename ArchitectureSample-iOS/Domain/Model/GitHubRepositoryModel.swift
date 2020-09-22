@@ -13,6 +13,7 @@ struct GitHubRepositoriesModel {
 }
 
 struct GitHubRepositoryModel {
+    let name: String
     let avatarUrl: GitHubRepositoryOwnerModel
     let fullName: String
     let language: String
@@ -20,5 +21,6 @@ struct GitHubRepositoryModel {
 }
 
 struct GitHubRepositoryOwnerModel {
+    let login: String
     let avatarUrl: String
 }
