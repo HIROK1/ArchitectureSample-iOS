@@ -83,6 +83,7 @@
 		6425172424DAF51B0096C173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6425173324DB002F0096C173 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		645174CF251792C600CEF140 /* GitHubRepositoryDetailViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryDetailViewControllerBuilder.swift; sourceTree = "<group>"; };
+		645174D12519087C00CEF140 /* GitHubRepositoryDetailUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryDetailUI.swift; sourceTree = "<group>"; };
 		64563B6724EEAFD0005EEF3A /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		6464E53C25012C3C00C765DC /* GitHubRepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryModel.swift; sourceTree = "<group>"; };
 		6464E53E25012D6600C765DC /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
@@ -312,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				6487799D24E6C80300443FF6 /* GitHubRepositoryDetailViewController.swift */,
+				645174D12519087C00CEF140 /* GitHubRepositoryDetailUI.swift */,
 			);
 			path = RepositoryDetail;
 			sourceTree = "<group>";
@@ -536,6 +538,7 @@
 				6487799E24E6C80300443FF6 /* GitHubRepositoryDetailViewController.swift in Sources */,
 				64821DCF24E539520035247C /* GitHubSearchRepositoryPresenter.swift in Sources */,
 				648779A724E7CBD200443FF6 /* GitHubSearchRepositoryListEntity.swift in Sources */,
+				645174D22519087C00CEF140 /* GitHubRepositoryDetailUI.swift in Sources */,
 				64821DC324E428DE0035247C /* UI.swift in Sources */,
 				64563B6824EEAFD0005EEF3A /* Logger.swift in Sources */,
 				64821DCB24E42A4B0035247C /* GitHubSearchRepositoryUI.swift in Sources */,
