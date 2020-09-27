@@ -10,13 +10,13 @@ import UIKit
 
 final class GitHubRepositoryDetailViewController: UIViewController {
     
-    var ui: GitHubRepositoryDetailUI! {
+    private var ui: GitHubRepositoryDetailUI! {
         didSet {
             ui.viewController = self
         }
     }
     
-    var presenter: GitHubRepositoryDetailPresenter!
+    private var presenter: GitHubRepositoryDetailPresenter!
     
     func inject(ui: GitHubRepositoryDetailUI, presenter: GitHubRepositoryDetailPresenter) {
         self.ui = ui
