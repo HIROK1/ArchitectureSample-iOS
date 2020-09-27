@@ -33,10 +33,9 @@ extension GitHubRepositoryDetailUIImpl {
     }
     
     func setupReadmeContentView(readmeString: String) {
-        guard let vc = viewController else { return }
-        
         readmeContentView = try? DownView(frame: .zero, markdownString: readmeString)
-
+        guard let vc = viewController, let readmeContentView = readmeContentView else { return }
+        
         vc.view.addSubview(readmeContentView)
         readmeContentView.translatesAutoresizingMaskIntoConstraints = false
         readmeContentView.topAnchor.constraint(equalTo: vc.view.topAnchor).isActive = true
