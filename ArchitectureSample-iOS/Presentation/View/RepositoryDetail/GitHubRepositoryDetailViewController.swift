@@ -29,7 +29,7 @@ final class GitHubRepositoryDetailViewController: UIViewController {
         ui.setup()
     }
     
-    func fetchReadme(owner: String, repositoryName: String) {
+    func setupReadme(owner: String, repositoryName: String) {
         presenter.fetchReadme(owner: owner, repositoryName: repositoryName)
     }
 }
