@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GitHubSearchRepositoryListViewController: UIViewController {
+final class GitHubSearchRepositoryListViewController: UIViewController {
 
     private var ui: GitHubSearchRepositoryUI! {
         didSet {
