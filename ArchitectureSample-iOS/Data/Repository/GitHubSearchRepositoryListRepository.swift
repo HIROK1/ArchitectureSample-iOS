@@ -9,7 +9,7 @@
 import Foundation
 
 protocol GitHubSearchRepositoryListRepository: AnyObject {
-    func searchRepository(text: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void)
+    func searchRepository(text: String, completion: @escaping ((Result<GitHubSearchRepositoryListEntity, Error>) -> Void))
 }
 
 final class GitHubSearchRepositoryListRepositoryImpl: GitHubSearchRepositoryListRepository {
@@ -20,9 +20,7 @@ final class GitHubSearchRepositoryListRepositoryImpl: GitHubSearchRepositoryList
         self.dataStore = dataStore
     }
     
-    func searchRepository(text: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        dataStore.searchRepository(text: text) { data, response, error in
-            completion(data, response, error)
-        }
+    func searchRepository(text: String, completion: @escaping ((Result<GitHubSearchRepositoryListEntity, Error>) -> Void)) {
+        dataStore.searchRepository(text: text, completion: completion)
     }
 }
