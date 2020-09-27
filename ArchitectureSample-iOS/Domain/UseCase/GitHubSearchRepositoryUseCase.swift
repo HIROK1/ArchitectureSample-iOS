@@ -21,24 +21,12 @@ final class GitHubSearchRepositoryUseCaseImpl: GitHubSearchRepositoryUseCase {
     }
     
     func searchRepository(text: String, completion: @escaping (Result<[GitHubRepositoryModel], Error>) -> Void) {
-        repository.searchRepository(text: text) { data, response, error in
-            
-            if let error = error {
-                completion(.failure(error))
-            }
-        
-            if let response = response as? HTTPURLResponse, let data = data {
-                Logger.apiResponseLogger(response, String(bytes: data, encoding: .utf8) ?? "")
-            }
-            
-            let decoder = JSONDecoder()
-            
-            do {
-                guard let data = data else { return }
-                let githubResponse = try decoder.decode(GitHubSearchRepositoryListEntity.self, from: data)
-                let repositories = GitHubRepositoriesTranslator.translate(githubResponse)
+        repository.searchRepository(text: text) { result in
+            switch result {
+            case .success(let entity):
+                let repositories = GitHubRepositoriesTranslator.translate(entity)
                 completion(.success(repositories.repositories))
-            } catch {
+            case .failure(let error):
                 completion(.failure(error))
             }
         }
