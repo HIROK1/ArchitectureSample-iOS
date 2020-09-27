@@ -9,7 +9,7 @@
 import Foundation
 
 protocol GitHubRepositoryDetailRepository: AnyObject {
-    func fetchReadme(owner: String, repositoryName: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void)
+    func fetchReadme(owner: String, repositoryName: String, completion: @escaping ((Result<GitHubRepositoryReadmeEntity, Error>) -> Void))
 }
 
 final class GitHubRepositoryDetailRepositoryImpl: GitHubRepositoryDetailRepository {
@@ -20,9 +20,7 @@ final class GitHubRepositoryDetailRepositoryImpl: GitHubRepositoryDetailReposito
         self.dataStore = dataStore
     }
     
-    func fetchReadme(owner: String, repositoryName: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        dataStore.fetchReadme(owner: owner, repositoryName: repositoryName) { data, response, error in
-            completion(data, response, error)
-        }
+    func fetchReadme(owner: String, repositoryName: String, completion: @escaping ((Result<GitHubRepositoryReadmeEntity, Error>) -> Void)) {
+        dataStore.fetchReadme(owner: owner, repositoryName: repositoryName, completion: completion)
     }
 }
