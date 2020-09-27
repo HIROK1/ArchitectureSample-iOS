@@ -9,9 +9,7 @@
 import UIKit
 
 class GitHubSearchRepositoryListViewController: UIViewController {
-    
-    private var repositories: [GitHubRepositoryModel] = []
-    
+
     private var ui: GitHubSearchRepositoryUI! {
         didSet {
             ui.repositorySearchBar.delegate = self
@@ -37,14 +35,14 @@ class GitHubSearchRepositoryListViewController: UIViewController {
 extension GitHubSearchRepositoryListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repositories.count
+        return presenter.repositories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: GitHubSearchRepositoryListTableViewCell.this, for: indexPath) as? GitHubSearchRepositoryListTableViewCell else {
             return UITableViewCell()
         }
-        let repository = repositories[indexPath.row]
+        let repository = presenter.repositories[indexPath.row]
         cell.configure(repository: repository)
         return cell
     }
@@ -68,14 +66,13 @@ extension GitHubSearchRepositoryListViewController: UITableViewDelegate {
 // MARK - GitHubSearchRepositoryPresenterView
 extension GitHubSearchRepositoryListViewController: GitHubSearchRepositoryPresenterView {
     
-    func updateRepositories(model: [GitHubRepositoryModel]) {
-        self.repositories = model
+    func updateRepositories() {
         self.ui.repositoryTableView.reloadData()
     }
     
     func transitionToRepositoryDetails(indexPath: IndexPath) {
         let vc = GitHubRepositoryDetailViewControllerBuilder.build()
-        vc.setupReadme(owner: repositories[indexPath.row].avatarUrl.login, repositoryName: repositories[indexPath.row].name)
+        vc.setupReadme(owner: presenter.repositories[indexPath.row].avatarUrl.login, repositoryName: presenter.repositories[indexPath.row].name)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

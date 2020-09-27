@@ -10,6 +10,8 @@ import Foundation
 
 final class GitHubSearchRepositoryPresenterImpl: GitHubSearchRepositoryPresenter {
     
+    var repositories: [GitHubRepositoryModel] = []
+    
     private weak var view: GitHubSearchRepositoryPresenterView?
     
     private let useCase: GitHubSearchRepositoryUseCase
@@ -28,7 +30,8 @@ final class GitHubSearchRepositoryPresenterImpl: GitHubSearchRepositoryPresenter
             switch result {
             case .success(let model):
                 DispatchQueue.main.sync {
-                    self.view?.updateRepositories(model: model)
+                    self.repositories = model
+                    self.view?.updateRepositories()
                 }
                 
             case .failure(let error):
