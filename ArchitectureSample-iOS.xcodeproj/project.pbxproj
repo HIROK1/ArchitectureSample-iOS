@@ -219,6 +219,7 @@
 				648779A124E7CB5400443FF6 /* Repository */,
 				648779A024E7CB4700443FF6 /* DataStore */,
 				6487799F24E7CB3E00443FF6 /* Entity */,
+				6425173224DB000B0096C173 /* Network */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -228,7 +229,6 @@
 			children = (
 				64B7E120250BAAB3002C1A47 /* Extension */,
 				64F9165524F75BF300520D24 /* Builder */,
-				6425173224DB000B0096C173 /* Network */,
 			);
 			path = Application;
 			sourceTree = "<group>";
