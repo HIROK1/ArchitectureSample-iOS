@@ -9,7 +9,7 @@
 import Foundation
 
 protocol APIClientRequest {
-    func send(_ request: Request, completion: @escaping ((Data?, URLResponse?, Error?) -> Void))
+    func send<T: Decodable>(_ request: Request, completion: @escaping ((Result<T, Error>) -> Void))
 }
 
 protocol Request {
@@ -31,7 +31,7 @@ enum HttpMethod: String {
 
 struct APIClient: APIClientRequest {
     
-    func send(_ request: Request, completion: @escaping ((Data?, URLResponse?, Error?) -> Void)) {
+    func send<T: Decodable>(_ request: Request, completion: @escaping ((Result<T, Error>) -> Void)) {
         
         var urlComps = request.baseURL
         urlComps?.path = request.path
@@ -46,7 +46,23 @@ struct APIClient: APIClientRequest {
         Logger.apiRequestLogger(_request)
         
         URLSession.shared.dataTask(with: _request) { data, response, error in
-            completion(data, response, error)
+            
+            if let error = error {
+                completion(.failure(error))
+            }
+            
+            if let response = response as? HTTPURLResponse, let data = data {
+                Logger.apiResponseLogger(response, String(bytes: data, encoding: .utf8) ?? "")
+            }
+            
+            do {
+                guard let data = data else { return }
+                let entity = try JSONDecoder().decode(T.self, from: data)
+                completion(.success(entity))
+            } catch {
+                completion(.failure(error))
+            }
+            
         }.resume()
     }
 }

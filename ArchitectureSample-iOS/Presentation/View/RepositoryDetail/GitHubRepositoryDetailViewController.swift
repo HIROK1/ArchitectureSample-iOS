@@ -10,13 +10,13 @@ import UIKit
 
 final class GitHubRepositoryDetailViewController: UIViewController {
     
-    var ui: GitHubRepositoryDetailUI? {
+    private var ui: GitHubRepositoryDetailUI! {
         didSet {
-            ui?.viewController = self
+            ui.viewController = self
         }
     }
     
-    var presenter: GitHubRepositoryDetailPresenter?
+    private var presenter: GitHubRepositoryDetailPresenter!
     
     func inject(ui: GitHubRepositoryDetailUI, presenter: GitHubRepositoryDetailPresenter) {
         self.ui = ui
@@ -26,11 +26,11 @@ final class GitHubRepositoryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ui?.setup()
+        ui.setup()
     }
     
-    func fetchReadme(owner: String, repositoryName: String) {
-        presenter?.fetchReadme(owner: owner, repositoryName: repositoryName)
+    func setupReadme(owner: String, repositoryName: String) {
+        presenter.fetchReadme(owner: owner, repositoryName: repositoryName)
     }
 }
 
@@ -38,7 +38,7 @@ final class GitHubRepositoryDetailViewController: UIViewController {
 extension GitHubRepositoryDetailViewController: GitHubRepositoryDetailPresenterView {
     
     func showReadme(readmeString: String) {
-        ui?.setupReadmeContentView(readmeString: readmeString)
+        ui.setupReadmeContentView(readmeString: readmeString)
     }
     
     func showErrorAlert() {

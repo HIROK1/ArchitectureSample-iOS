@@ -21,21 +21,12 @@ final class GitHubRepositoryDetailUseCaseImpl: GitHubRepositoryDetailUseCase {
     }
 
     func fetchReadme(owner: String, repositoryName: String, completion: @escaping (Result<GitHubRepositoryReadmeModel, Error>) -> Void) {
-        repository.fetchReadme(owner: owner, repositoryName: repositoryName) { data, response, error in
-            if let error = error {
-                completion(.failure(error))
-            }
-            
-            if let response = response as? HTTPURLResponse, let data = data {
-                Logger.apiResponseLogger(response, String(bytes: data, encoding: .utf8) ?? "")
-            }
-            
-            do {
-                guard let data = data else { return }
-                let githubResponse = try JSONDecoder().decode(GitHubRepositoryReadmeEntity.self, from: data)
-                let readmeContent = GitHubRepositoryDetailTranslator.translate(githubResponse)
+        repository.fetchReadme(owner: owner, repositoryName: repositoryName) { result in
+            switch result {
+            case .success(let entity):
+                let readmeContent = GitHubRepositoryDetailTranslator.translate(entity)
                 completion(.success(readmeContent))
-            } catch {
+            case .failure(let error):
                 completion(.failure(error))
             }
         }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct GitHubRequest: Request {
+struct SearchRepositoryRequest: Request {
     
     let value: String
     

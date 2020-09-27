@@ -9,13 +9,11 @@
 import Foundation
 
 protocol GitHubRepositoryDetailDataStore {
-    func fetchReadme(owner: String, repositoryName: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void)
+    func fetchReadme(owner: String, repositoryName: String, completion: @escaping ((Result<GitHubRepositoryReadmeEntity, Error>) -> Void))
 }
 
 struct GitHubRepositoryDetailDataStoreImpl: GitHubRepositoryDetailDataStore {
-    func fetchReadme(owner: String, repositoryName: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        APIClient().send(RepositoryReadmeRequest(owner: owner, repo: repositoryName)) { data, response, error in
-            completion(data, response, error)
-        }
+    func fetchReadme(owner: String, repositoryName: String, completion: @escaping ((Result<GitHubRepositoryReadmeEntity, Error>) -> Void)) {
+        APIClient().send(RepositoryReadmeRequest(owner: owner, repo: repositoryName), completion: completion)
     }
 }

@@ -9,14 +9,12 @@
 import Foundation
 
 protocol GitHubSearchRepositoryListDataStore {
-    func searchRepository(text: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void)
+    func searchRepository(text: String, completion: @escaping ((Result<GitHubSearchRepositoryListEntity, Error>) -> Void))
 }
 
 struct GitHubSearchRepositoryListDataStoreImpl: GitHubSearchRepositoryListDataStore {
     
-    func searchRepository(text: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        APIClient().send(GitHubRequest(value: text)) { data, response, error in
-            completion(data, response, error)
-        }
+    func searchRepository(text: String, completion: @escaping ((Result<GitHubSearchRepositoryListEntity, Error>) -> Void)) {
+        APIClient().send(SearchRepositoryRequest(value: text), completion: completion)
     }
 }

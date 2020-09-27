@@ -9,12 +9,13 @@
 import Foundation
 
 protocol GitHubSearchRepositoryPresenter: AnyObject {
+    var repositories: [GitHubRepositoryModel] { get set }
     func didSelectRow(at indexPath: IndexPath)
     func didTapSearchButton(text: String)
 }
 
 protocol GitHubSearchRepositoryPresenterView: AnyObject {
-    func updateRepositories(model: [GitHubRepositoryModel])
+    func updateRepositories()
     func transitionToRepositoryDetails(indexPath: IndexPath)
     func showActivityIndicator()
     func stopActivityIndicator()
