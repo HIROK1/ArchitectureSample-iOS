@@ -21,9 +21,10 @@ struct GitHubSearchRepositoryListViewControllerBuilder: ViewControllerBuilder {
         let repository = GitHubSearchRepositoryListRepositoryImpl(dataStore: dataStore)
         let useCase = GitHubSearchRepositoryUseCaseImpl(repository: repository)
         let presenter = GitHubSearchRepositoryPresenterImpl(view: vc, useCase: useCase)
+        let router = GitHubSearchRepositoryRouterImpl(viewController: vc)
         
         ui.viewController = vc
-        vc.inject(ui: ui, presenter: presenter)
+        vc.inject(ui: ui, presenter: presenter, router: router)
         
         return vc
     }
