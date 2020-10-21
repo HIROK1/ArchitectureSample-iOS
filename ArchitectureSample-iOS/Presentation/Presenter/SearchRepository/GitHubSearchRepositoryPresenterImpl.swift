@@ -10,14 +10,17 @@ import Foundation
 
 final class GitHubSearchRepositoryPresenterImpl: GitHubSearchRepositoryPresenter {
     
+    var router: GitHubSearchRepositoryRouter
+    
     var repositories: [GitHubRepositoryModel] = []
     
     private weak var view: GitHubSearchRepositoryPresenterView?
     
     private let useCase: GitHubSearchRepositoryUseCase
     
-    init(view: GitHubSearchRepositoryPresenterView, useCase: GitHubSearchRepositoryUseCase) {
+    init(view: GitHubSearchRepositoryPresenterView, router: GitHubSearchRepositoryRouter, useCase: GitHubSearchRepositoryUseCase) {
         self.view = view
+        self.router = router
         self.useCase = useCase
     }
     
@@ -41,6 +44,7 @@ final class GitHubSearchRepositoryPresenterImpl: GitHubSearchRepositoryPresenter
     }
     
     func didSelectRow(at indexPath: IndexPath) {
-        self.view?.transitionToRepositoryDetails(indexPath: indexPath)
+        router.transitionToRepositoryDetail(owner: repositories[indexPath.row].avatarUrl.login,
+                                            repositoryName: repositories[indexPath.row].name)
     }
 }
