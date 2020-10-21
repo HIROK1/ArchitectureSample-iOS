@@ -20,12 +20,9 @@ final class GitHubSearchRepositoryListViewController: UIViewController {
     
     private var presenter: GitHubSearchRepositoryPresenter!
     
-    private var router: GitHubSearchRepositoryRouter!
-    
-    func inject(ui: GitHubSearchRepositoryUI, presenter: GitHubSearchRepositoryPresenter, router: GitHubSearchRepositoryRouter) {
+    func inject(ui: GitHubSearchRepositoryUI, presenter: GitHubSearchRepositoryPresenter) {
         self.ui = ui
         self.presenter = presenter
-        self.router = router
     }
 
     override func viewDidLoad() {
@@ -71,11 +68,6 @@ extension GitHubSearchRepositoryListViewController: GitHubSearchRepositoryPresen
     
     func updateRepositories() {
         self.ui.repositoryTableView.reloadData()
-    }
-    
-    func transitionToRepositoryDetails(indexPath: IndexPath) {
-        router.transitionToRepositoryDetail(owner: presenter.repositories[indexPath.row].avatarUrl.login,
-                                            repositoryName: presenter.repositories[indexPath.row].name)
     }
     
     func showActivityIndicator() {
