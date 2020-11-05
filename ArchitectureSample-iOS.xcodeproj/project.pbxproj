@@ -131,6 +131,7 @@
 		64B7E11A250BA876002C1A47 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
 		64B7E121250BAAD8002C1A47 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		64B7E125250F7370002C1A47 /* GrayOutActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayOutActivityIndicatorView.swift; sourceTree = "<group>"; };
+		64CA28C32553971C00F7BA0B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		64F9165624F75C1A00520D24 /* ViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBuilder.swift; sourceTree = "<group>"; };
 		64F9165824F75C8000520D24 /* GitHubSearchRepositoryListViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchRepositoryListViewControllerBuilder.swift; sourceTree = "<group>"; };
 		64FAEDAA2505C58300F62F33 /* GitHubSearchRepositoryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchRepositoryListTableViewCell.swift; sourceTree = "<group>"; };
@@ -166,6 +167,7 @@
 		642516F424DAF51A0096C173 = {
 			isa = PBXGroup;
 			children = (
+				64CA28C32553971C00F7BA0B /* README.md */,
 				642516FF24DAF51A0096C173 /* ArchitectureSample-iOS */,
 				6425171624DAF51B0096C173 /* ArchitectureSample-iOSTests */,
 				6425172124DAF51B0096C173 /* ArchitectureSample-iOSUITests */,
